@@ -11,6 +11,7 @@ i18n.use(initReactI18next).init({
         "Display name": "Display name",
         Password: "Password",
         "Confirm Password": "Confirm Password",
+        Login: "Login",
       },
     },
     tr: {
@@ -21,6 +22,7 @@ i18n.use(initReactI18next).init({
         "Display name": "Görünən ad",
         Password: "Şifrə",
         "Confirm Password": "Şifrəni təsdiqlə",
+        Login: "Giriş",
       },
     },
   },

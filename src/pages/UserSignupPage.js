@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { signUp, changeLang } from "../api/apiCalls";
+import { signUp } from "../api/apiCalls";
 import Input from "../components/Input";
+import ButtonWithProgress from "../components/ButtonWithProgress";
 import { withTranslation } from "react-i18next";
+import LanguageSelector from "../components/LanguageSelector";
 
 class UserSignupPage extends Component {
   state = {
@@ -33,12 +35,6 @@ class UserSignupPage extends Component {
       [name]: value,
       errors,
     });
-  };
-
-  onChangeLang = (lang) => {
-    const { i18n } = this.props;
-    i18n.changeLanguage(lang);
-    changeLang(lang);
   };
 
   onClickSignUp = async (event) => {
@@ -106,32 +102,12 @@ class UserSignupPage extends Component {
             error={passwordConfirm}
             onChangeInput={this.onChangeInput}
           />
-          <div className="text-center">
-            <button
-              disabled={pendingApiCall || passwordConfirm !== undefined}
-              className="col-12 btn btn-lg btn-success"
-              onClick={this.onClickSignUp}
-            >
-              {pendingApiCall && (
-                <span className="spinner-border spinner-border-sm"></span>
-              )}{" "}
-              {t("Sign up")}
-            </button>
-            <div>
-              <img
-                style={{ cursor: "pointer" }}
-                src="https://www.countryflags.io/az/flat/32.png"
-                alt="Language flag"
-                onClick={() => this.onChangeLang("tr")}
-              />
-              <img
-                style={{ cursor: "pointer" }}
-                src="https://www.countryflags.io/gb/flat/32.png"
-                alt="Language flag"
-                onClick={() => this.onChangeLang("en")}
-              />
-            </div>
-          </div>
+          <ButtonWithProgress
+            disabled={pendingApiCall || passwordConfirm !== undefined}
+            onClick={this.onClickSignUp}
+            pendingApiCall={pendingApiCall}
+            text={t("Sign up")}
+          />
         </form>
       </div>
     );
