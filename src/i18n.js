@@ -12,6 +12,7 @@ i18n.use(initReactI18next).init({
         Password: "Password",
         "Confirm Password": "Confirm Password",
         Login: "Login",
+        Logout: "Logout",
       },
     },
     tr: {
@@ -23,6 +24,7 @@ i18n.use(initReactI18next).init({
         Password: "Şifrə",
         "Confirm Password": "Şifrəni təsdiqlə",
         Login: "Giriş",
+        Logout: "Çıxış",
       },
     },
   },
