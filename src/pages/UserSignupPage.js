@@ -51,8 +51,8 @@ const UserSignupPage = (props) => {
     password: passwordError,
   } = errors;
 
-  const pendingApiCallSignUp = useApiProgress("/api/1.0/users");
-  const pendingApiCallLogin = useApiProgress("/api/1.0/auth");
+  const pendingApiCallSignUp = useApiProgress("post", "/api/1.0/users");
+  const pendingApiCallLogin = useApiProgress("post", "/api/1.0/auth");
   const pendingApiCall = pendingApiCallSignUp || pendingApiCallLogin;
 
   const { t } = useTranslation();

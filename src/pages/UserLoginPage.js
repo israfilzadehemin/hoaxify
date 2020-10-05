@@ -30,14 +30,13 @@ const UserLoginPage = (props) => {
       await dispatch(loginHandler(creds));
       push("/");
     } catch (err) {
-      console.log(err);
       setError(err.response.data.message);
     }
   };
 
   const { t } = useTranslation();
 
-  const pendingApiCall = useApiProgress("/api/1.0/auth");
+  const pendingApiCall = useApiProgress("post", "/api/1.0/auth");
 
   const buttonEnabled = username && password;
 

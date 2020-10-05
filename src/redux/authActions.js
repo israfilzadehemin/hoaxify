@@ -1,4 +1,5 @@
-import { login, signUp } from "../api/apiCalls";
+import { act } from "react-dom/test-utils";
+import { clearAuthorizationHeader, login, signUp } from "../api/apiCalls";
 import * as actionTypes from "./actionTypes";
 
 export const logoutSuccess = () => {
@@ -11,6 +12,16 @@ export const loginSuccess = (authState) => {
   return {
     type: actionTypes.LOGIN_SUCCESS,
     payload: authState,
+  };
+};
+
+export const updateSuccess = (displayName, image) => {
+  return {
+    type: actionTypes.UPDATE_SUCCESS,
+    payload: {
+      displayName,
+      image
+    },
   };
 };
 
