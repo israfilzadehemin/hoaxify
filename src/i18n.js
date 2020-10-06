@@ -26,6 +26,7 @@ i18n.use(initReactI18next).init({
         MyProfile: "My profile",
         NoHoax: "There are no hoaxes",
         OldHoaxes: "Load old hoaxes",
+        NewHoax: "You have new hoaxes",
       },
     },
     tr: {
@@ -50,6 +51,7 @@ i18n.use(initReactI18next).init({
         MyProfile: "Hesabım",
         NoHoax: "Hələki heç bir hoax paylaşılmayıb",
         OldHoaxes: "Əvvəlki hoaxları yüklə...",
+        NewHoax: "Yeni hoaxlar var",
       },
     },
   },

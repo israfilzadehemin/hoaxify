@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 const HoaxView = (props) => {
   const { hoax } = props;
-  const { user, content, timestamp } = hoax;
+  const { user, content, timestamp, fileAttachmentVM } = hoax;
   const { username, displayName, image } = user;
 
   const { i18n } = useTranslation();
@@ -35,6 +35,20 @@ const HoaxView = (props) => {
         </div>
       </div>
       <div className="pl-5">{content}</div>
+      {fileAttachmentVM && (
+        <div className="text-center">
+          {fileAttachmentVM.fileType.startsWith("image") ? (
+            <img
+              src={"images/attachment/" + fileAttachmentVM.name}
+              className="img-fluid img-thumbnail"
+              alt="content"
+              style={{ width: "100%" }}
+            />
+          ) : (
+            <strong>Unknown attachment</strong>
+          )}
+        </div>
+      )}
     </div>
   );
 };

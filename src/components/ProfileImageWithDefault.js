@@ -6,7 +6,7 @@ const profilePictureWithDefault = (props) => {
   let imgSrc = defaultPicture;
 
   if (image) {
-    imgSrc = "images/" + image;
+    imgSrc = "images/profile" + image;
   }
 
   return (
